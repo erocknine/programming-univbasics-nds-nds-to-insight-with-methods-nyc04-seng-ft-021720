@@ -16,8 +16,8 @@ require 'pp'
 def gross_for_director(director_data)
   total_gross = 0
   index = 0
-  while index < director_data[:movies].count do
-    total_gross += director_data[:movies][index][:worldwide_gross]
+  while index < director_data.count do
+    total_gross += director_data[index][:worldwide_gross]
     index += 1
   end
   total_gross
@@ -28,8 +28,8 @@ def directors_totals(nds)
   result = {}
   index = 0
   while index < directors_database.count do
-    director = directors_database[index]
-    result[director[:name]] = gross_for_director(director)
+    director = directors_database[index][:movies]
+    result[directors_database[index][:name]] = gross_for_director(director)
     index += 1
   end
   result
