@@ -16,7 +16,7 @@ require 'pp'
 def gross_for_director(director_data)
   total_gross = 0
   index = 0
-  while index < director_data.count do
+  while index < director_data.length do
     total_gross += director_data[index][:worldwide_gross]
     index += 1
   end
